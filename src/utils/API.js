@@ -1,10 +1,7 @@
 import axios from "axios"; 
 
-axios({
-    url: 'https://randomuser.me/api/',
-    dataType: 'json',
-    success: function(data) {
-      console.log(data);
-      return axios.get(data)
+export default{
+    getEmployees: function(){
+        return axios.get('https://randomuser.me/api/?results=10');
     }
-  });
+};
