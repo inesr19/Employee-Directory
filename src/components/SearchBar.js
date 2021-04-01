@@ -1,9 +1,18 @@
 import React from "react";
-import {Form} from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 const SearchBar = () => {
     return (
-        <Form.Control type="text"/>
+    <Form>
+        <Form.Group>
+            <Form.Label></Form.Label>
+            <Form.Control type="text" placeholder="Search for employee" />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+            Submit
+        </Button>
+    </Form>
+        
     )
 }
 
