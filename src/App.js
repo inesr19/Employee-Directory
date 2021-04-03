@@ -1,19 +1,11 @@
-import React, { useEffect, useState } from "react";
-import Title from "./components/Title";
-import SearchBar from "./components/SearchBar";
-import EmployeeTable from "./components/EmployeeTable"
-
-
-
-
+import React from "react";
+import Directory from "./components/Directory"
 
 function App() {
    
     return (
     <>
-        <Title />
-        <SearchBar handleSubmit={handleSubmit}/>
-        <EmployeeTable employees={employees}/>
+       <Directory />
     </>
     )
 }

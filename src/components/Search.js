@@ -1,11 +1,11 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 
-const SearchBar = (props) => {
+const Search = (props) => {
     
     const handleSubmit = (e) => {
-
-        const firstName = employees.filter(employee => {
+        e.preventDefault();
+        const firstName = props.employeeState.filter(employee => {
             // console.log(employee.name.first)
             return employee.name.first.includes(e.target.value)
         })
@@ -26,4 +26,4 @@ const SearchBar = (props) => {
     )
 }
 
-export default SearchBar;
+export default Search;
