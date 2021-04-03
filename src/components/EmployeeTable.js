@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import {Table} from "react-bootstrap";
 
 
-const EmployeeTable = () => {
+const EmployeeTable = (props) => {
     const [employees, setEmployees] = useState([]);
 
     useEffect(() => {
-        fetch("https://randomuser.me/api/")
+        fetch("https://randomuser.me/api/?results=10&nat=us")
         .then((res) => res.json())
         .then((res) => {
             setEmployees(res.results)
@@ -14,6 +14,7 @@ const EmployeeTable = () => {
     }, []);
 
     return (
+
       <Table>
         <thead>
             <tr>
@@ -24,9 +25,10 @@ const EmployeeTable = () => {
             </tr>
         </thead>
         <tbody>
-            {employees.map(({dob, name, email}) =>( <EmployeeRow dob={dob} name={name} email={email}/>))}
+            {props.employees.map(({dob, name, email}) =>( <EmployeeRow dob={dob} name={name} email={email}/>))}
         </tbody>
       </Table>
+      
     )
 }
 

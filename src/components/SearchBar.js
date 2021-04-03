@@ -1,14 +1,24 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
+    
+    const handleSubmit = (e) => {
+
+        const firstName = employees.filter(employee => {
+            // console.log(employee.name.first)
+            return employee.name.first.includes(e.target.value)
+        })
+        console.log(firstName)
+    }
+
     return (
     <Form>
         <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control type="text" placeholder="Search for employee" />
+            <Form.Control onKeyUp={props.handleSubmit} type="text" placeholder="Search for employee" />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button onClick={() => handleSubmit} variant="primary" type="submit">
             Submit
         </Button>
     </Form>
