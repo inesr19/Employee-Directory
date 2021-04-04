@@ -16,10 +16,10 @@ const Search = (props) => {
     <Form>  
         <Form.Group>
             <Form.Label></Form.Label>
-            <Form.Control onKeyUp={props.handleSubmit} type="text" placeholder="Search for employee" />
+            <Form.Control onChange={props.people} type="text" placeholder="Search for an employee by first name" />
         </Form.Group>
         <Button onClick={() => handleSubmit} variant="primary" type="submit">
-            Submit
+            Filter
         </Button>
     </Form>
         

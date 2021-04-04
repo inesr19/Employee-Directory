@@ -22,16 +22,20 @@ const Directory = () => {
 
         const filteredList = employeeState.filter(item => {
             console.log(item);
-
-            return true;
+             if(item.name.first === e.target.value){
+               return true;
+             } else {
+               return false;
+             }
         })
+        console.log(filteredList)
         setFilteredEmployees(filteredList);
     }
 
     return (
         <div>
         <Title />
-        <Search onChange={handleInputChange}/>
+        <Search people={handleInputChange}/>
         <Table>
         <thread>
             <tr>
