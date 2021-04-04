@@ -7,4 +7,4 @@ The purpose of this react app is to navigate through an employee directory effic
 ![employee-directory](https://github.com/inesr19/Employee-Directory/blob/main/src/image/employee-dir.png)
 
 ## Link
-
+[Employee Directory](https://stormy-taiga-16008.herokuapp.com/)
