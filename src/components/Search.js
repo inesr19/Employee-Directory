@@ -13,7 +13,7 @@ const Search = (props) => {
     }
 
     return (
-    <Form>
+    <Form>  
         <Form.Group>
             <Form.Label></Form.Label>
             <Form.Control onKeyUp={props.handleSubmit} type="text" placeholder="Search for employee" />

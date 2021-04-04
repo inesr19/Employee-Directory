@@ -7,16 +7,25 @@ import Search from "../components/Search";
 
 const Directory = () => {
     const [employeeState, setEmployees] = useState([]);
+    const [filteredEmployees, setFilteredEmployees] = useState([]);
 
     useEffect(() => {
         API.getEmployees()
           .then(results => {
               setEmployees(results.data.results)
+              setFilteredEmployees(results.data.results)
           });
     }, [])
 
     const handleInputChange = (e) => {
-        setEmployees(e.target.value);
+        console.log(e.target.value);
+
+        const filteredList = employeeState.filter(item => {
+            console.log(item);
+
+            return true;
+        })
+        setFilteredEmployees(filteredList);
     }
 
     return (
@@ -33,7 +42,7 @@ const Directory = () => {
                 <th>Email</th>
             </tr>
             <tbody>
-                {employeeState.map(
+                {filteredEmployees.map(
                     (
                         {
                             picture,
